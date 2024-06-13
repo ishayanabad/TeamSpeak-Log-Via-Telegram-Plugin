@@ -2,53 +2,50 @@
 
 ## Overview
 
-The "TeamSpeak Log Via Telegram" plugin is designed for TeamSpeak servers to provide real-time notifications of various events via Telegram. This plugin helps administrators stay informed about important activities on their TeamSpeak server by sending configurable messages for different events directly to a specified Telegram channel.
+The "TeamSpeak Log Via Telegram" plugin is an efficient tool for TeamSpeak server administrators, providing real-time notifications about server events through Telegram. This enables administrators to stay informed about critical activities, enhancing server management and response capabilities.
 
 ## Features
 
-- **Event Notifications**: Sends notifications for various TeamSpeak events, including:
-  - Client moves between channels
-  - Client kicked from a channel or server
-  - Client banned from the server
-  - Server group additions and removals
-  - Channel creation and deletion
-  - Client nickname changes
+- **Event Notifications**: Receives alerts for various TeamSpeak server events, including:
+  - Client movements between channels.
+  - Clients being kicked or banned from the server.
+  - Changes in server groups.
+  - Creation and deletion of channels.
+  - Changes in client nicknames.
+
 - **Customizable Messages**: Allows administrators to define custom messages for each event type using placeholders for dynamic content.
-- **Async HTTP Requests**: Uses asynchronous HTTP POST requests to communicate with the Telegram API, ensuring minimal impact on server performance.
+
+- **Efficient Performance**: Utilizes asynchronous HTTP requests to communicate with the Telegram API, ensuring minimal impact on server performance.
 
 ## Installation
 
-1. **Download and Configure the Plugin**:
+1. **Download the Plugin**:
    - Clone this repository or download the plugin files.
-   - Place the plugin file in the appropriate directory for your TeamSpeak server.
+   - Install the plugin by placing the files in the appropriate directory on your TeamSpeak server.
 
-2. **Setting Up Telegram Bot**:
-   - Create a new Telegram bot using [BotFather](https://core.telegram.org/bots#6-botfather) and obtain the bot token.
-   - Create a Telegram channel and add the bot as an admin to this channel to obtain the channel ID.
+2. **Setup Your Telegram Bot**:
+   - Create a Telegram bot via [BotFather](https://core.telegram.org/bots#6-botfather) and obtain the bot token.
+   - Set up a Telegram channel and add your bot as an admin to acquire the channel ID.
 
 3. **Configure the Plugin**:
-   - Open the plugin configuration file and set the following variables:
+   - Open the configuration file of the plugin and set the following:
      - `token`: Your Telegram bot token.
      - `channel_id`: Your Telegram channel ID.
-     - Custom messages for each event type as required.
+     - Customize messages for each event as necessary.
 
 ## Configuration Variables
 
-- `token`: **(string)** Telegram Bot Token (e.g., `123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ`).
-- `channel_id`: **(string)** Telegram Channel ID (e.g., `-123456789`).
-- `MoveMSG`: **(multiline)** Message template for client moves.
-- `KFC`: **(multiline)** Message template for when a client is kicked from a channel.
-- `KFS`: **(multiline)** Message template for when a client is kicked from the server.
-- `BanMSG`: **(multiline)** Message template for when a client is banned.
-- `serverGroupAdded_MSG`: **(multiline)** Message template for server group additions.
-- `serverGroupRemoved_MSG`: **(multiline)** Message template for server group removals.
-- `channelCreate_MSG`: **(multiline)** Message template for channel creation.
-- `channelDelete_MSG`: **(multiline)** Message template for channel deletion.
-- `ChangeNick_MSG`: **(multiline)** Message template for nickname changes.
+Here are the variables you can configure in the plugin:
 
-## Example of Custom Messages
+- `token`: *(string)* Your Telegram Bot Token (e.g., `123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ`).
+- `channel_id`: *(string)* Your Telegram Channel ID (e.g., `-123456789`).
+  
+Below are the placeholders for the message templates you can customize for each event type:
 
-You can use placeholders in your messages to include dynamic content:
+- `MoveMSG`, `KFC`, `KFS`, `BanMSG`, `serverGroupAdded_MSG`, `serverGroupRemoved_MSG`, `channelCreate_MSG`, `channelDelete_MSG`, `ChangeNick_MSG`
+
+Example usage of placeholders in custom messages:
+
 - `%a` - Client's name
 - `%b` - Invoker's name
 - `%c` - Channel name
@@ -61,18 +58,18 @@ You can use placeholders in your messages to include dynamic content:
 - `%bm` - Ban message
 - `%t` - Time
 
-Example message template for `MoveMSG`:
+Example message for `MoveMSG`:
 ```
 User %a moved to channel %c. IP: %i, Ping: %pi, Packet Loss: %pc, Country: %co, UID: %u, Database ID: %d
 ```
 
 ## Usage
 
-Once configured, the plugin will automatically start monitoring the specified events and send the corresponding messages to your Telegram channel. You'll get real-time updates about the activities happening on your TeamSpeak server, facilitating better management and response.
+Once configured, the plugin will monitor specified events and automatically send notifications to the configured Telegram channel, providing real-time updates on your TeamSpeak server's activities.
 
 ## Contribution
 
-Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
 
 ## License
 
