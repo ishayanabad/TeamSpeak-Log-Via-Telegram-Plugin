@@ -77,7 +77,3 @@ Contributions are welcome! If you have any suggestions or improvements, feel fre
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize further as per your project requirements. This description provides a clear and detailed overview of what the plugin does and how to use it.
