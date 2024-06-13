@@ -1,7 +1,7 @@
 registerPlugin(
     {
         name: "Teamspeak Log",
-        version: "4.0",
+        version: "1.0",
         description: "TeamSpeak Log Via Telegram",
         author: "Shayan Abad - Ali Izadi",
         requiredModules: ["http"],
@@ -10,13 +10,13 @@ registerPlugin(
                 name: "token",
                 title: "Telegram Bot Token",
                 type: "string",
-                placeholder: "00000000:ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                placeholder: "123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             },
             {
                 name: "channel_id",
                 title: "Telegram Channel Id",
                 type: "string",
-                placeholder: "-000000000",
+                placeholder: "-123456789",
             },
             {
                 name: "MoveMSG",
